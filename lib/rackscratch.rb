@@ -6,10 +6,14 @@ module Rackscratch
   class Error < StandardError; end
   # Your code goes here...
 
+  # Diff from the epsode 317: must use finish method at the end. Without it, raise 'undefined method to_i for Rack::Response'
   class Greeter
     def call(env)
-      # Diff from the epsode 317: must use finish method at the end. Without it, raise 'undefined method to_i for Rack::Response'
-      Rack::Response.new(render('index.html.erb')).finish
+      request = Rack::Request.new(env)
+      case request.path
+        when '/' then Rack::Response.new(render('index.html.erb')).finish
+        else Rack::Response.new('Not Found', 404).finish
+      end
     end
 
     def render(template)
