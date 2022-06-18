@@ -1,8 +1,11 @@
 # Rackscratch
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rackscratch`. To experiment with that code, run `bin/console` for an interactive prompt.
+[Rails cast](http://railscasts.com/episodes/317-rack-app-from-scratch?autoplay=true)
+Rack From Scratch revisited
 
-TODO: Delete this and the text above, and describe your gem
+This gem is a simple rack application.
+
+It renders a helow rack in the root url and a not found for others requests.
 
 ## Installation
 
@@ -22,7 +25,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This is the primitive tool the primitive man raise up and became a spaceship in the 2001 an Space Odyssey
 
 ## Development
 
