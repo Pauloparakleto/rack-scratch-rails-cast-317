@@ -1,7 +1,3 @@
-class Greeter
-    def call(env)
-        [200, {}, ['Hello rack']]
-    end
-  end
+require 'rackscratch'
 
-run Greeter.new
+run Rackscratch::Greeter.new
