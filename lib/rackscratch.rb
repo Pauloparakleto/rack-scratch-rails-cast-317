@@ -1,6 +1,7 @@
 # frozen_string_literal: true
+
 require 'erb'
-require_relative "rackscratch/version"
+require_relative 'rackscratch/version'
 require 'byebug'
 
 module Rackscratch
@@ -19,13 +20,13 @@ module Rackscratch
 
     def response
       case @request.path
-        when '/' then Rack::Response.new(render('index.html.erb'))
-        when '/change'
-          Rack::Response.new(@request.params['name'], 302) do |response|
-            response.set_cookie('greet', @request.params['name'])
-            response.redirect('/')
-          end
-        else Rack::Response.new('Not Found', 404)
+      when '/' then Rack::Response.new(render('index.html.erb'))
+      when '/change'
+        Rack::Response.new(@request.params['name'], 302) do |response|
+          response.set_cookie('greet', @request.params['name'])
+          response.redirect('/')
+        end
+      else Rack::Response.new('Not Found', 404)
       end
     end
 
