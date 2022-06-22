@@ -8,7 +8,8 @@ module Rackscratch
   class Error < StandardError; end
   # Your code goes here...
 
-  # Diff from the epsode 317: must use finish method at the end. Without it, raise 'undefined method to_i for Rack::Response'
+  # Diff from the epsode 317: must use finish method at the end. Without it, raise
+  # 'undefined method to_i for Rack::Response'
   class Greeter
     def self.call(env)
       new(env).response.finish
