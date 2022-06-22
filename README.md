@@ -24,8 +24,10 @@ Or install it yourself as:
     $ gem install rackscratch
 
 ## Usage
+This is the primitive tool the primitive man raise up and became a spaceship in the 2001 an Space Odyssey.
+This simple example have provided me lot of ideas about how to think rack apps in rails framework.
+![2001-a-space-odyssey-v02-silver-ferox-design](https://user-images.githubusercontent.com/52010485/174448709-f5096cc2-d5bb-4f7b-8d18-4af9a8506a48.jpg)
 
-This is the primitive tool the primitive man raise up and became a spaceship in the 2001 an Space Odyssey
 
 ## Development
 
