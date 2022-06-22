@@ -9,16 +9,23 @@ module Rackscratch
 
   # Diff from the epsode 317: must use finish method at the end. Without it, raise 'undefined method to_i for Rack::Response'
   class Greeter
-    def call(env)
+    def self.call(env)
+      new(env).response.finish
+    end
+
+    def initialize(env)
       @request = Rack::Request.new(env)
+    end
+
+    def response
       case @request.path
-        when '/' then Rack::Response.new(render('index.html.erb')).finish
+        when '/' then Rack::Response.new(render('index.html.erb'))
         when '/change'
           Rack::Response.new(@request.params['name'], 302) do |response|
             response.set_cookie('greet', @request.params['name'])
             response.redirect('/')
-          end.finish
-        else Rack::Response.new('Not Found', 404).finish
+          end
+        else Rack::Response.new('Not Found', 404)
       end
     end
 
